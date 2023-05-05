@@ -1,6 +1,6 @@
 package Cliente;
 
-public class Normal {
+public class Normal extends TipoCliente{
   public static double porcentajeImpuestoAdemanda=0.21;
   public static double porcentajeImpuestoContratado=0.21;
 

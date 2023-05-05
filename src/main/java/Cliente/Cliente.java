@@ -3,6 +3,7 @@ package Cliente;
 import Servicios.Contrato;
 import Servicios.Servicio;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Cliente {
@@ -10,6 +11,17 @@ public class Cliente {
   private List<Servicio> servicios = new ArrayList<>();
   private List<Contrato> contratos = new ArrayList<>();
   private TipoCliente tipo;
+
+  public Cliente(TipoCliente tipo){
+    this.tipo = tipo;
+  }
+
+  public void agregarServicio(Servicio ... servicios){
+    Collections.addAll(this.servicios,servicios);
+  }
+  public void agregarContrato(Contrato ... contratos){
+    Collections.addAll(this.contratos,contratos);
+  }
   public double facturar(){
     return tipo.facturar(this.totalApagarContratados(),this.totalApagarAdemanda());
   }
